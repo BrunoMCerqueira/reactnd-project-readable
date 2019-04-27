@@ -11,10 +11,6 @@ describe('Test WrapPlatform component', () => {
     expect(wrapper.find('nav')).toHaveLength(1);    
   })
 
-  it('renders a list of cards', () => {
-    expect(wrapper.find('ol')).toHaveLength(1);
-  })
-
   it('renders a form', () => {
     expect(wrapper.find('form')).toHaveLength(1);
   })

@@ -8,6 +8,13 @@ describe('Test WrapCategory component', () => {
   beforeEach(()=> { wrapper = mount(<WrapCategory />)})
 
   it('renders a nav', () => {
-    expect(wrapper.find('nav')).toHaveLength(1);    
+    expect(wrapper.find('nav')).toHaveLength(1);
+    expect(wrapper.find('ol')).toHaveLength(1);    
   })
+
+  it('renders nav options', () => {
+    expect(wrapper.find('li')).toHaveLength(3);
+  })
+
+  
 })

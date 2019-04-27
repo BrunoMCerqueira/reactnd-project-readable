@@ -4,7 +4,7 @@ import './styles.css';
 class WrapCards extends Component {
   render(){
     return(
-      <ol></ol>
+      <div></div>
     )
   }
 }
