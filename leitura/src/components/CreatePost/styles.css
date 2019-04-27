@@ -1,0 +1,16 @@
+.form-style {
+  padding: 10px;
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 750px) {
+  .form-width {
+    width: 85vw;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .form-width {
+    width: 50vw;
+  }
+}

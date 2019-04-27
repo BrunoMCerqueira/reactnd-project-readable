@@ -4,7 +4,7 @@ import './styles.css';
 class CreatePost extends Component {
   render(){
     return(
-      <div className="card">
+      <div className="card shadow-sm m-1">
         <div className="card-body">
           <div className="d-flex justify-content-between">
             <h5 className="card-title">Card title</h5>

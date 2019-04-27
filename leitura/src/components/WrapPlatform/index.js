@@ -10,7 +10,9 @@ class WrapPlatform extends Component {
       <main>
         <WrapCategory />
         <WrapCards />
-        <CreatePost />
+        <div className="d-flex justify-content-center m-4 p-3">
+          <CreatePost />
+        </div>
       </main>
     )
   }
