@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { mount } from 'enzyme';
 import WrapPlatform from '../WrapPlatform'
 
@@ -8,11 +7,16 @@ describe('Test WrapPlatform component', () => {
   let wrapper;
   beforeEach(()=> { wrapper = mount(<WrapPlatform />)})
 
-  it('renders without crashing', () => {
-    const main = document.createElement('main');
-    ReactDOM.render(<WrapPlatform />, main);
-    ReactDOM.unmountComponentAtNode(main);
-  });
+  it('renders a nav', () => {
+    expect(wrapper.find('nav')).toHaveLength(1);    
+  })
 
+  it('renders a list of cards', () => {
+    expect(wrapper.find('ol')).toHaveLength(1);
+  })
+
+  it('renders a form', () => {
+    expect(wrapper.find('form')).toHaveLength(1);
+  })
 })
 
