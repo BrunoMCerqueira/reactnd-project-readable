@@ -7,7 +7,7 @@ describe('Test WrapCards component', () => {
   let wrapper;
   beforeEach(()=> { wrapper = mount(<WrapCards />)})
 
-  it('renders a div', () => {
-    expect(wrapper.find('div')).toHaveLength(1);    
+  it('renders a wrap-cards', () => {
+    expect(wrapper.find('.wrap-cards')).toHaveLength(1);    
   })
 })
