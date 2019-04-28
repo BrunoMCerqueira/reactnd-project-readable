@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
-import UniqueCard from '../UniqueCard';
+import UniquePost from '../UniquePost';
 import './styles.css';
 
-class WrapCards extends Component {
+class WrapPosts extends Component {
   render(){
     return(
       <div className="row wrap-cards">
         <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-          <UniqueCard />
+          <UniquePost />
         </div>
         <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-          <UniqueCard />
+          <UniquePost />
         </div>
         <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-          <UniqueCard />
+          <UniquePost />
         </div>
         <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-          <UniqueCard />
+          <UniquePost />
         </div>
       </div>
     )
   }
 }
 
-export default WrapCards;
+export default WrapPosts;

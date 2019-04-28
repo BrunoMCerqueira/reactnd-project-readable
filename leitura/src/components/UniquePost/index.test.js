@@ -1,11 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import UniqueCard from '../UniqueCard'
+import UniquePost from '../UniquePost'
 
 
-describe('Test UniqueCard component', () => {
+describe('Test UniquePost component', () => {
   let wrapper;
-  beforeEach(()=> { wrapper = mount(<UniqueCard />)})
+  beforeEach(()=> { wrapper = mount(<UniquePost />)})
 
   it('renders a card', () => {
     expect(wrapper.find('.card')).toHaveLength(1);   
