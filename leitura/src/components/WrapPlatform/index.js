@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 class WrapPlatform extends Component {
   render(){
     return (
-      <main>
+      <main className="mb-5">
         <WrapCategory />
         <div className="font-30 mb-2 d-flex justify-content-center">
           <Link to="/create" className="d-flex">

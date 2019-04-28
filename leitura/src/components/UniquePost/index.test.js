@@ -8,10 +8,9 @@ describe('Test UniquePost component', () => {
   beforeEach(()=> { wrapper = mount(<UniquePost />)})
 
   it('renders a card', () => {
-    expect(wrapper.find('.card')).toHaveLength(1);   
-    expect(wrapper.find('.card-body')).toHaveLength(1);   
-    expect(wrapper.find('.card-title')).toHaveLength(1);   
-    expect(wrapper.find('.card-text')).toHaveLength(1);   
-    expect(wrapper.find('.card-data')).toHaveLength(1);   
+    expect(wrapper.find('.card')).toHaveLength(1);
+    expect(wrapper.find('.card-body')).toHaveLength(1);
+    expect(wrapper.find('.card-title')).toHaveLength(1);
+    expect(wrapper.find('.card-text')).toHaveLength(1);
   })
 })
