@@ -6,6 +6,10 @@ import DetailPost from './components/DetailPost'
 import { Route } from 'react-router-dom';
 import Header from './components/shared/Header';
 import Footer from './components/shared/Footer';
+import Modal from './components/shared/MessageModal';
+const modalRoot = document.createElement('div');
+modalRoot.setAttribute('id', 'modal');
+document.body.append(modalRoot);
 
 function App() {
   return (
@@ -16,6 +20,7 @@ function App() {
       <Route exact path="/category/:category" component={WrapPlatform} />
       <Route exact path="/category/:category/post" component={DetailPost} />
       <Footer />
+      <Modal/>
     </div>
   );
 }

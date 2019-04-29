@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './styles.css';
 import UniqueComment from '../UniqueComment';
+import $ from 'jquery';
 
 class DetailPost extends Component {
-  
+  openModal = () => $("#message-modal").modal();
   render() {
     return (
       <div className="col-md-8 offset-md-2 mb-5">
@@ -32,6 +33,9 @@ class DetailPost extends Component {
           <UniqueComment />
           <UniqueComment />
         </div>
+        <button type="button" className="btn bg-main" onClick={this.openModal}>
+          Adicionar comentário
+        </button>
       </div>
     )
   }

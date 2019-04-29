@@ -23,6 +23,10 @@ describe('Test DetailPost component', () => {
   it('renders post comments', () => {
     expect(wrapper.find('.comments')).toHaveLength(1);    
   })
+
+  it('renders a button to comment', () => {
+    expect(wrapper.find('.bg-main')).toHaveLength(1);    
+  })
 })
 
 // deve ter um controle para adicionar um novo comentário
