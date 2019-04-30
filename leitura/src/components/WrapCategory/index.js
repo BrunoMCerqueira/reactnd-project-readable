@@ -1,20 +1,33 @@
 import React, { Component } from 'react';
 import './styles.css';
 import { Link } from 'react-router-dom';
+import { categoriesAPI } from '../../actions/category';
+import { connect } from 'react-redux';
 
 class WrapCategory extends Component {
+  componentDidMount() {
+    this.props.dispatch(categoriesAPI());
+  }
+
   render(){
+    const { categories } = this.props;
     return(
       <nav>
         <ol className="d-flex justify-content-center font-weight-bolder">
         {/* <Link to={`/category/${category.path}`}>{category.name}</Link> */}
-          <li>Tomates</li>
-          <li>Tomates</li>
-          <li>Tomates</li>
+        {categories[0] && categories.map((category, index) => (
+          <li key={index}>{category.name}</li>
+        ))}
         </ol>
       </nav>
     )
   }
 }
 
-export default WrapCategory;
+const mapStateToProps = state => {
+  return {
+    categories: state.categories,
+  };
+};
+
+export default connect(mapStateToProps)(WrapCategory);

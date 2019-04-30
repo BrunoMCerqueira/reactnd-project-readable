@@ -1,7 +1,9 @@
 export function categoryReducer ( state = [], action) {
+  const { categories } = action;
+
   switch(action.type) {
-    case 'GET_CATEGORIES' :
-      return state.categories
+    case 'RECEIVE_CATEGORIES' :
+      return state.concat(categories);
     default:
       return state
   }
