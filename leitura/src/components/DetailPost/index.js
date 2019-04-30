@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 import UniqueComment from '../UniqueComment';
+import PropTypes from 'prop-types';
 import $ from 'jquery';
 
 class DetailPost extends Component {
@@ -40,5 +41,9 @@ class DetailPost extends Component {
     )
   }
 }
+
+DetailPost.propTypes = {
+  onClick: PropTypes.func
+};
 
 export default DetailPost;

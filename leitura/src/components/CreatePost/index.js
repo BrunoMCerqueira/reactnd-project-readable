@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './styles.css';
 
 class CreatePost extends Component {
@@ -45,5 +46,9 @@ class CreatePost extends Component {
     )
   }
 }
+
+CreatePost.propTypes = {
+  onChange: PropTypes.func
+};
 
 export default CreatePost;

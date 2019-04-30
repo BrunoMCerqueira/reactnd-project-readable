@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
 class MessageModal extends Component {
   state = { body: '', author: '' };
 
   handleSubmit = () => console.log('as');
-  handleFormChange = () => console.log('as');
+
+  handleFormChange = (event, state) => {
+    this.setState({ [state]: event.target.value });
+  }
   render() {
     return (
       <div className="modal" tabIndex="-1" role="dialog" id="message-modal">
@@ -35,6 +39,10 @@ class MessageModal extends Component {
     )
   }
 }
+
+MessageModal.propTypes = {
+  onChange: PropTypes.func
+};
 
 function Modal(props) {
   return ReactDOM.createPortal(<MessageModal/>, document.querySelector("#modal"));
