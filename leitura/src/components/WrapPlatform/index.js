@@ -4,7 +4,6 @@ import WrapCategory from '../WrapCategory';
 import WrapPosts from '../WrapPosts';
 import { Link } from 'react-router-dom';
 
-
 class WrapPlatform extends Component {
   render(){
     return (

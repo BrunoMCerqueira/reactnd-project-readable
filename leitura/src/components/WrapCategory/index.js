@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 class WrapCategory extends Component {
   componentDidMount() {
-    this.props.dispatch(categoriesAPI());
+    this.props.getCategories();
   }
 
   render(){
@@ -15,7 +15,7 @@ class WrapCategory extends Component {
       <nav>
         <ol className="d-flex justify-content-center font-weight-bolder">
         {/* <Link to={`/category/${category.path}`}>{category.name}</Link> */}
-        {categories[0] && categories.map((category, index) => (
+        {categories.map((category, index) => (
           <li key={index}>{category.name}</li>
         ))}
         </ol>
@@ -30,4 +30,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(WrapCategory);
+export default connect(mapStateToProps, { getCategories: categoriesAPI })(WrapCategory);
