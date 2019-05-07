@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import UniquePost from '../UniquePost';
 import './styles.css';
-import { postsAPI } from '../../actions/post';
+import { postsAPI, postsWithCategoryAPI } from '../../actions/post';
 import { connect } from 'react-redux';
 
 class WrapPosts extends Component {
   componentDidMount() {
-    this.props.getPosts();
+    const { category } = this.props;
+    if(category) {
+      // this.props.getPostsWithCategory(category);
+    } else {
+      this.props.getPosts();
+    }
   }
 
   render(){

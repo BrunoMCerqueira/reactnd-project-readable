@@ -13,3 +13,13 @@ export const postsAPI = () => {
       .then(data => dispatch(receivePosts(data)));
   }
 };
+
+export const postsWithCategoryAPI = (category) => {
+  if (category) {
+    return (dispatch) => {
+      fetch(`${API}/${category}/posts`, { headers })
+        .then(response => response.json())
+        .then(data => dispatch(receivePosts(data)));
+    }
+  }
+};

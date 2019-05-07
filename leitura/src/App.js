@@ -20,7 +20,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={WrapPlatform} />
           <Route exact path="/create" component={CreatePost} />
-          <Route exact path="/category/:category" component={WrapPlatform} />
+          <Route exact path="/category/:category" render={(props) => (<WrapPlatform {...props} />)} />
           <Route exact path="/category/:category/post" component={DetailPost} />
         </Switch>
         <Footer />

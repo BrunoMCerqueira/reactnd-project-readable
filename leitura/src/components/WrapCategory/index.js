@@ -14,9 +14,9 @@ class WrapCategory extends Component {
     return(
       <nav>
         <ol className="d-flex justify-content-center font-weight-bolder">
-        {/* <Link to={`/category/${category.path}`}>{category.name}</Link> */}
+        
         {categories.map((category, index) => (
-          <li key={index}>{category.name}</li>
+          <Link to={`/category/${category.path}`} key={index} className="category-link">{category.name}</Link>
         ))}
         </ol>
       </nav>
