@@ -3,7 +3,7 @@ export function categoryReducer(state = [], action) {
 
   switch(action.type) {
     case 'RECEIVE_CATEGORIES':
-      return state.concat(categories);
+      return [...categories];
     default:
       return state
   }

@@ -34,4 +34,7 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { getPosts: postsAPI, getPostsByCategory: category => postsByCategoryAPI(category) })(WrapPosts);
+export default connect(mapStateToProps,
+  { getPosts: postsAPI,
+    getPostsByCategory: category => postsByCategoryAPI(category),
+  })(WrapPosts);
