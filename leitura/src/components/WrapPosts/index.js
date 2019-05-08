@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import UniquePost from '../UniquePost';
 import './styles.css';
-import { postsAPI, postsWithCategoryAPI } from '../../actions/post';
+import { postsAPI, postsByCategoryAPI } from '../../actions/post';
 import { connect } from 'react-redux';
 
 class WrapPosts extends Component {
   componentDidMount() {
     const { category } = this.props;
     if(category) {
-      // this.props.getPostsWithCategory(category);
+      this.props.getPostsByCategory(category);
     } else {
       this.props.getPosts();
     }
@@ -34,4 +34,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { getPosts: postsAPI })(WrapPosts);
+export default connect(mapStateToProps, { getPosts: postsAPI, getPostsByCategory: category => postsByCategoryAPI(category) })(WrapPosts);

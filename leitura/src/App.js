@@ -18,7 +18,7 @@ class App extends Component {
       <div className="App container-fluid">
         <Header />
         <Switch>
-          <Route exact path="/" component={WrapPlatform} />
+          <Route exact path="/" render={(props) => (<WrapPlatform {...props} />)} />
           <Route exact path="/create" component={CreatePost} />
           <Route exact path="/category/:category" render={(props) => (<WrapPlatform {...props} />)} />
           <Route exact path="/category/:category/post" component={DetailPost} />

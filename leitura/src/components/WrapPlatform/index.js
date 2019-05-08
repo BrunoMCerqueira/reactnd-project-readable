@@ -14,7 +14,7 @@ class WrapPlatform extends Component {
             <span className="font-20 font-weight-bolder mr-2">Adicionar post </span> <i className="fas fa-plus"></i>
           </Link>
         </div>
-        <WrapPosts category={this.props.match.params.category}/>
+        <WrapPosts category={this.props.match.params.category} />
       </main>
     )
   }

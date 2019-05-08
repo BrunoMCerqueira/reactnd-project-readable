@@ -14,7 +14,7 @@ export const postsAPI = () => {
   }
 };
 
-export const postsWithCategoryAPI = (category) => {
+export const postsByCategoryAPI = (category) => {
   if (category) {
     return (dispatch) => {
       fetch(`${API}/${category}/posts`, { headers })
