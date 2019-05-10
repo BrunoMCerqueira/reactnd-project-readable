@@ -13,7 +13,7 @@ class CreatePost extends Component {
 
   handleSubmit = () => {
     const { ...post } = this.state;
-    this.addPost(post);
+    this.props.addPost(post);
     this.handleCleanInputs();
   }
 

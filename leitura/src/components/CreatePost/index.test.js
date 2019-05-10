@@ -1,11 +1,18 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import CreatePost from '../CreatePost'
+import CreatePost from '../CreatePost';
+import thunk from "redux-thunk";
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from "redux";
+import reducer from '../../reducer';
+
+const store = createStore(reducer, applyMiddleware(thunk));
+
 
 
 describe('Test CreatePost component', () => {
   let wrapper;
-  beforeEach(()=> { wrapper = mount(<CreatePost />)})
+  beforeEach(()=> { wrapper = mount(<Provider store={store}><CreatePost /></Provider>)})
 
   it('renders a form with a textarea, select and button', () => {
     expect(wrapper.find('form')).toHaveLength(1);
