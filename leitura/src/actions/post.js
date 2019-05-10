@@ -6,6 +6,11 @@ const receivePosts = posts => {
   posts
 })}
 
+const addPost = post => ({
+  type: 'ADD_POST',
+  post
+});
+
 export const postsAPI = () => {
   return (dispatch) => {
     fetch(`${API}/posts`, { headers })
@@ -21,5 +26,20 @@ export const postsByCategoryAPI = (category) => {
         .then(response => response.json())
         .then(data => dispatch(receivePosts(data)));
     }
+  }
+};
+
+export const addPostAPI = (post) => {
+  const timestamp = Date.now();
+  const id = Math.random().toString();
+  post = { ...post, timestamp, id };
+  return (dispatch) => {
+    fetch(`${API}/posts`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(post)
+    })
+      .then(response => response.json())
+      .then(post => dispatch(addPost(post)));
   }
 };

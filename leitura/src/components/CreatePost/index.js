@@ -1,17 +1,30 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
+import { addPostAPI } from '../../actions/post';
+import { connect } from 'react-redux';
 
 class CreatePost extends Component {
-  state = { title: '', post: '', author: '', category: 'tomate1' };
+  state = { title: '', body: '', author: '', category: '' };
 
   handleFormChange = (event, state) => {
     this.setState({ [state]: event.target.value });
   }
 
   handleSubmit = () => {
-    console.log('saving data!')
+    const { ...post } = this.state;
+    this.addPost(post);
+    this.handleCleanInputs();
   }
+
+  handleCleanInputs = () => {
+    this.setState({ title: '', body: '', author: '', category: '' });
+  }
+
+  validateInputs = () => {
+    const { title, body, author, category } = this.state;
+    return title !== '' && body !== '' && author !== '' && category !== '';
+  };
 
   render(){
     return(
@@ -21,7 +34,7 @@ class CreatePost extends Component {
           <fieldset className="form-group">
             <input type="text" value={this.state.title} onChange={(e) => this.handleFormChange(e, "title")}
               placeholder="Título" className="form-control mb-1"/>
-            <textarea value={this.state.post} onChange={(e) => this.handleFormChange(e, "post")}
+            <textarea value={this.state.post} onChange={(e) => this.handleFormChange(e, "body")}
               placeholder="Post" className="form-control"/>
           </fieldset>
           <fieldset>
@@ -51,4 +64,4 @@ CreatePost.propTypes = {
   onChange: PropTypes.func
 };
 
-export default CreatePost;
+export default connect(null, { addPost: post => addPostAPI(post),})(CreatePost);
